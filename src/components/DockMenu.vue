@@ -2,14 +2,9 @@
 
 import Button from "primevue/button"
 
-import { ref } from "vue";
+import { ref, defineProps } from "vue";
 import Dock from 'primevue/dock';
 
-const activeTab = ref('home');
-
-const changeTab = function (tab) {
-    activeTab.value = tab;
-}
 
 const menuItems = ref([
     {
@@ -17,22 +12,22 @@ const menuItems = ref([
         tab: 'home',
         icon: 'pi pi-home'
     },{
-        label: 'Education',
-        tab: 'education',
-        icon: 'pi pi-info-circle'
-        
+        label: 'Projects',
+        tab: 'projects',
+        icon: 'pi pi-github'
     },{
         label: 'Skills',
-        tab: 'skill',
+        tab: 'skills',
         icon: 'pi pi-ellipsis-v'
-    },{
-        label: 'Projects',
-        tab: 'project',
-        icon: 'pi pi-github'
     },{
         label: 'Experience',
         tab: 'experience',
         icon: 'pi pi-list'
+    },{
+        label: 'Education',
+        tab: 'education',
+        icon: 'pi pi-info-circle'
+        
     },{
         label: 'Contact',
         tab: 'contact',
@@ -40,15 +35,16 @@ const menuItems = ref([
     },
 ]);
 
+const props = defineProps(['activeTab']);
+
 </script>
 
 <template>
-   
     <Dock :model="menuItems" position="bottom">
         <template #itemicon="{ item }">
             <Button 
-                @click="changeTab(item.tab)" 
-                :severity="activeTab == item.tab ? 'info' : 'secondary'" 
+                @click="$emit('changeTab', item.tab)" 
+                :severity="props.activeTab == item.tab ? 'info' : 'secondary'" 
                 variant="text" :label="item.label" :icon="item.icon"
                 type="button" class="text-lg"/>
         </template>
@@ -62,5 +58,4 @@ const menuItems = ref([
         text-align: center;
         width: 5rem;
     }
-
 </style>
