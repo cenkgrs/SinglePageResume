@@ -1,14 +1,11 @@
 <script setup>
 
-    import HeaderMenu from '../HeaderMenu.vue';
+    import DockMenu from '../DockMenu.vue';
 
 </script>
 
 <template>
-    <HeaderMenu />
+    <DockMenu />
 
-  <div class="grid bg-gray-100">
-    <h1>Hello Again</h1>
-  </div>
 
 </template>
