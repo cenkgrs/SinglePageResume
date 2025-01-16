@@ -3,3 +3,11 @@
 @import "./primevue/tailwind.css";
 @import "tailwindcss/utilities";
 @import "./theme.scss";
+
+.p-timeline-event-connector {
+    background-color: #eeee;
+}
+
+.p-timeline-event-content {
+    flex: 8 1 0%;
+}
