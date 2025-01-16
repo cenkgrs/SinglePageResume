@@ -4,8 +4,6 @@
     import Card from 'primevue/card';
 
     const events = ref([
-        //{ status: 'Sabancı 50.Yıl Anadolu Lisesi', date: '2012 - 2016', icon: 'pi pi-graduation-cap', color: '#9C27B0'},
-        //{ status: 'Istanbul University - Computer Engineering', date: '2016 - 2020', icon: 'pi pi-graduation-cap', color: '#9C27B0'},
         { 
             status: 'Bilet.com - Intern', date: '2019 - 2020', icon: 'pi pi-ellipsis-v', color: '#673AB7',
             data: [
@@ -61,13 +59,3 @@
     </div>
 
 </template>
-
-<style>
-    .p-timeline-event-connector {
-        background-color: gray;
-    }
-
-    .p-timeline-event-content {
-        flex: 8 1 0%;
-    }
-</style>
